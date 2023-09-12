@@ -1,0 +1,29 @@
+pipeline {
+    agent any 
+    enviroment{
+        registry ="JenkinsDocker"
+        img = "$registry" + ":${env.BUILD_ID}"
+        //registryCredential = "docker-hub-login"
+    }
+    stages {
+        stage('Checkout') { 
+            steps {
+                git branch: 'main', url: 'https://github.com/KevinGGAlmeida/JenkinsTEste.git'
+            }
+        }
+        stage('Build') { 
+            steps {
+                echo "Building our image"
+                script{
+                    dockerImg = docker.build("${img}")
+                }
+            }
+        }
+        stage('Run') { 
+            steps {
+                echo "Run Image"
+                sh returnStdout: true,script: "docker run -d --name ${JOB_NAME} -p 9000:9000 ${img}"
+            }
+        }
+    }
+}
