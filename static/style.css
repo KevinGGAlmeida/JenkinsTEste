@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+}
+
+
+.Top{
+    display: flex;
+    width: 50%;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid gray;
+}
+
+.Top .Day{
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+
+.Top .Day input{
+    font-size: 25px;
+    width: 90px;
+    height: 35px;
+}
+
+
+.Top .Month{
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+
+}
+
+.Top .Month input{
+    font-size: 25px;
+    width: 100px;
+    height: 35px;
+}
+
+
+
+.Top .Year{
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.Top .Year input{
+    font-size: 25px;
+    width: 110px;
+    height: 35px;
+}
+
+.Top label{
+    font-size: 14px;
+    color: rgb(87, 82, 82);
+}
+
+
+
+.Bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 50%;
+    background-color: white;
+    font-size: 60px;
+    
+}
